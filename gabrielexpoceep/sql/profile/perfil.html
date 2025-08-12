@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil</title>
+    <link rel="stylesheet" href="../libs/css/perfil.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body class="corpoperfil">
+    <header>
+        <a href="cliente.html" class="voltar">⬅️ Voltar</a>
+    </header>
+<div class="container">
+    <h1>Editar Perfil</h1>
+    <form id="editProfileForm">
+        <div class="form-group">
+            <label for="username">Nome de Usuário:</label>
+            <input type="text" id="username" name="username" required>
+            <div class="error" id="usernameError"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" name="cep" required>
+            <div class="error" id="cepError"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="telefone">Telefone:</label>
+            <input type="text" id="telefone" name="telefone" required>
+            <div class="error" id="telefoneError"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Nova Senha:</label>
+            <input type="password" id="password" name="password" required>
+            <div class="error" id="passwordError"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="confirmPassword">Confirmar Senha:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+            <div class="error" id="confirmPasswordError"></div>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Salvar Alterações">
+        </div>
+    </form>
+
+    <div class="form-footer">
+        <p><a href="#">Cancelar</a></p>
+    </div>
+</div>
+
+<script>
+    document.getElementById('editProfileForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        let valid = true;
+
+        // Limpar mensagens de erro
+        document.getElementById('usernameError').innerText = '';
+        document.getElementById('cepError').innerText = '';
+        document.getElementById('telefoneError').innerText = '';
+        document.getElementById('passwordError').innerText = '';
+        document.getElementById('confirmPasswordError').innerText = '';
+
+        // Validação do Nome de Usuário
+        const username = document.getElementById('username').value;
+        if (username.trim() === '') {
+            document.getElementById('usernameError').innerText = 'Nome de usuário é obrigatório';
+            valid = false;
+        }
+
+        // Validação do CEP
+        const cep = document.getElementById('cep').value;
+        if (cep.trim() === '') {
+            document.getElementById('cepError').innerText = 'CEP é obrigatório';
+            valid = false;
+        } else if (!/^\d{5}-\d{3}$/.test(cep)) {
+            document.getElementById('cepError').innerText = 'Formato de CEP inválido (ex: 12345-678)';
+            valid = false;
+        }
+
+        // Validação da Senha
+        const password = document.getElementById('password').value;
+        if (password.trim() === '') {
+            document.getElementById('passwordError').innerText = 'Senha é obrigatória';
+            valid = false;
+        } else if (password.length < 8 || !/[a-zA-Z]/.test(password) || !/\d/.test(password)) {
+            document.getElementById('passwordError').innerText = 'A senha deve ter pelo menos 8 caracteres, incluindo uma letra e um número';
+            valid = false;
+        }
+
+        // Validação de confirmação de senha
+        const confirmPassword = document.getElementById('confirmPassword').value;
+        if (confirmPassword.trim() === '') {
+            document.getElementById('confirmPasswordError').innerText = 'Por favor, confirme a senha';
+            valid = false;
+        } else if (confirmPassword !== password) {
+            document.getElementById('confirmPasswordError').innerText = 'As senhas não coincidem';
+            valid = false;
+        }
+
+        // Se todas as validações passarem
+        if (valid) {
+            alert('Perfil atualizado com sucesso!');
+        }
+    });
+</script>
+
+</body>
+</html>

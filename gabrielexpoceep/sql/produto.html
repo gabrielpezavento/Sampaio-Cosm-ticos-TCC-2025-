@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sampaio Cosméticos - Home</title>
+    <link rel="shortcut icon" type="image" href="./libs/img/l2sc.png" />
+    <link rel="stylesheet" href="./libs/css/header.css">
+    <link rel="stylesheet" href="./libs/css/produtos.css">
+    </head>
+    <body>
+        <header class="cabecalho" role="banner">
+            <div class="logo" role="img" aria-label="Logo Sampaio Cosméticos">
+                <img src="./libs/img/logo2.jpg" alt="Logo Sampaio Cosméticos" class="logo-img" tabindex="0" />
+            </div>
+            <nav role="navigation" aria-label="Menu Principal">
+                <a href="home.html" tabindex="0">Home</a>
+                <a href="produtos.html" tabindex="0">Produtos</a>
+                <a href="contato.html" tabindex="0">Contato</a>
+            </nav>
+            <div class="dropdown" tabindex="0" aria-haspopup="true" aria-expanded="false">
+                <a class="icone-login" href="login.html" tabindex="-1">
+                    <img src="./libs/img/login.jpeg" alt="Login" width="30" height="30" />
+                </a>
+                <span class="arrow">&#9662;</span>
+                <div class="dropdown-content" tabindex="-1" aria-label="Menu usuário">
+                    <a href="profile/cliente.html" tabindex="0">Meu perfil</a>
+                    <a href="login.php" tabindex="0">Login/Cadastro</a>
+                </div>
+            </div>
+            <a class="icone" href="carrinho.html" aria-label="Carrinho de compras" tabindex="0">
+                <img src="./libs/img/carrinho.png" alt="Carrinho" width="30" height="30" />
+            </a>
+        </header>
+        
+        <main>
+                    <!-- Filtro de Ordenação -->
+                    <select
+                        class="filtro-ordem"
+                        aria-label="Selecione um filtro de ordenação"
+                        id="ordenarFiltro"
+                        onchange="filtrarPromoções()"
+                        tabindex="0"
+                    >
+                        <option value="" disabled selected>Selecione um filtro</option>
+                        <option value="preco-asc">Preço: Menor para Maior</option>
+                        <option value="preco-desc">Preço: Maior para Menor</option>
+                        <option value="nome-asc">Nome: A-Z</option>
+                        <option value="nome-desc">Nome: Z-A</option>
+                    </select>
+                </div>
+                <div class="secao-container" style="max-width: 700px; margin: 0 auto 3rem; justify-content: center;">
+                    <!-- Barra de Pesquisa -->
+                    <div class="barra-pesquisa-container" style="max-width: 480px; width: 100%;">
+                        <input
+                            type="text"
+                            class="barra-pesquisa"
+                            placeholder="Pesquisar por nome..."
+                            id="searchInput"
+                            onkeyup="filtrarPromoções()"
+                            aria-label="Buscar produtos por nome"
+                            tabindex="0"
+                        />
+                    </div>
+
+                    <button
+                        onclick="limparFiltro()"
+                        class="limpar-filtro"
+                        aria-label="Limpar filtros"
+                        tabindex="0"
+                        style="margin-left: 20px;"
+                    >
+                        Limpar Filtro
+                    </button>
+                </div>
+            </section>
+
+            <div class="cards" id="cardsContainer" role="list">
+                <!-- Products same as before, unchanged content for product cards -->
+                <!-- Produto 1 (Promoção) -->
+                <article class="card-promocao" data-categoria="maquiagem" data-nome="base líquida make. b mate salicylic 30g" data-preco="144.90" role="listitem" tabindex="0" aria-label="Base Líquida Make. B Mate Salicylic 30g por R$ 144,90, promoção de R$ 162,90">
+                    <a href="#">
+                        <img src="./libs/img/Base.jpg" alt="Base Líquida Make. B Mate Salicylic 30g" />
+                    </a>
+                    <div class="card-content">
+                        <a href="#">
+                            <h3>Base Líquida Make. B Mate Salicylic 30g</h3>
+                        </a>
+                        <span class="preco-promocao">R$ 162,90</span>
+                        <strong>por apenas</strong>
+                        <span class="preco">R$ 144,90</span>
+                        <button aria-label="Adicionar Base Líquida Make ao carrinho">Adicionar ao Carrinho</button>
+                    </div>
+                </article>
+                <!-- Produto 2 (Promoção) -->
+                <article class="card-promocao" data-categoria="maquiagem" data-nome="delineador líquido guerlain mad eyes - 01 preto" data-preco="119.90" role="listitem" tabindex="0" aria-label="Delineador Líquido Guerlain Mad Eyes - 01 Preto por R$ 119,90, promoção de R$ 289,90">
+                    <a href="#">
+                        <img src="./libs/img/delineado.webp" alt="Delineador Líquido Guerlain Mad Eyes - 01 Preto" />
+                    </a>
+                    <div class="card-content">
+                        <a href="#">
+                            <h3>Delineador Líquido Guerlain Mad Eyes - 01 Preto</h3>
+                        </a>
+                        <span class="preco-promocao">R$ 289,90</span>
+                        <strong>por apenas</strong>
+                        <span class="preco">R$ 119,90</span>
+                        <button aria-label="Adicionar Delineador Guerlain ao carrinho">Adicionar ao Carrinho</button>
+                    </div>
+                </article>  
+                <article class="card-promocao" data-categoria="maquiagem" data-nome="base facial revlon" data-preco="110.00" role="listitem" tabindex="0">
+                    <a href="#">
+                        <img src="./libs/img/base revlon.jpg" alt="Base Facial Revlon" />
+                    </a>
+                    <div class="card-content">
+                        <a href="#">
+                            <h3>Base Facial Revlon</h3>
+                        </a>
+                        <p>Base de cobertura média para um acabamento perfeito.</p>
+                        <span>R$ 110,00</span>
+                        <button aria-label="Adicionar Base Facial Revlon ao carrinho">Adicionar ao Carrinho</button>
+                    </div>
+                </article>
+
+                <article class="card-promocao" data-categoria="sem-promocao" data-nome="perfume flor de lis" data-preco="210.00" role="listitem" tabindex="0">
+                    <a href="#">
+                        <img src="./libs/img/flor de lis.jpg" alt="Perfume Flor de Lis" />
+                    </a>
+                    <div class="card-content">
+                        <a href="#">
+                            <h3>Perfume Flor de Lis</h3>
+                        </a>
+                        <p>Perfume suave e encantador.</p>
+                        <span>R$ 210,00</span>
+                        <button aria-label="Adicionar Perfume Flor de Lis ao carrinho">Adicionar ao Carrinho</button>
+                    </div>
+                </article>
+
+                <article class="card-promocao" data-categoria="perfumes" data-nome="chanel no.5" data-preco="900.00" role="listitem" tabindex="0">
+                    <a href="#">
+                        <img src="./libs/img/chanel.jpg" alt="Chanel No.5 Perfume" />
+                    </a>
+                    <div class="card-content">
+                        <a href="#">
+                            <h3>Chanel No.5</h3>
+                        </a>
+                        <span class="preco-promocao">R$ 1.100,00</span>
+                        <strong>por apenas</strong>
+                        <span class="preco">R$ 900,00</span>
+                        <button aria-label="Adicionar Chanel No.5 ao carrinho">Adicionar ao Carrinho</button>
+                    </div>
+                </article>
+
+                <article class="card-promocao" data-categoria="sem-promocao" data-nome="miss dior cologne" data-preco="250.00" role="listitem" tabindex="0">
+                    <a href="#">
+                        <img src="./libs/img/mis dior clogne.jpg" alt="Miss Dior Cologne" />
+                    </a>
+                    <div class="card-content">
+                        <a href="#">
+                            <h3>Miss Dior Cologne</h3>
+                        </a>
+                        <p>Fragrância sofisticada e elegante.</p>
+                        <span>R$ 250,00</span>
+                        <button aria-label="Saiba mais sobre Miss Dior Cologne">Veja sobre o Produto</button>
+                    </div>
+                </article>
+
+                <article class="card-promocao" data-categoria="cuidados" data-nome="óleo capilar kérastase" data-preco="350.00" role="listitem" tabindex="0">
+                    <a href="#">
+                        <img src="./libs/img/Óleo capilar.jpg" alt="Óleo Capilar Kérastase" />
+                    </a>
+                    <div class="card-content">
+                        <a href="#">
+                            <h3>Óleo Capilar Kérastase</h3>
+                        </a>
+                        <span class="preco-promocao">R$ 450,00</span>
+                        <strong>por apenas</strong>
+                        <span class="preco">R$ 350,00</span>
+                        <button aria-label="Adicionar Óleo Capilar Kérastase ao carrinho">Adicionar ao Carrinho</button>
+                    </div>
+                </article>
+
+                <article class="card-promocao" data-categoria="cuidados" data-nome="creme hidratante nivea" data-preco="35.00" role="listitem" tabindex="0">
+                    <a href="#">
+                        <img src="./libs/img/Creme nivia.jpg" alt="Creme Hidratante Nivea" />
+                    </a>
+                    <div class="card-content">
+                        <a href="#">
+                            <h3>Creme Hidratante Nivea</h3>
+                        </a>
+                        <span class="preco-promocao">R$ 45,00</span>
+                        <strong>por apenas</strong>
+                        <span class="preco">R$ 35,00</span>
+                        <button aria-label="Adicionar Creme Hidratante Nivea ao carrinho">Adicionar ao Carrinho</button>
+                    </div>
+                </article>
+
+                <article class="card-promocao" data-categoria="perfumes" data-nome="perfume la vie est belle" data-preco="400.00" role="listitem" tabindex="0">
+                    <a href="#">
+                        <img src="./libs/img/La vie.jpg" alt="Perfume La Vie Est Belle" />
+                    </a>
+                    <div class="card-content">
+                        <a href="#">
+                            <h3>Perfume La Vie Est Belle</h3>
+                        </a>
+                        <span class="preco-promocao">R$ 500,00</span>
+                        <strong>por apenas</strong>
+                        <span class="preco">R$ 400,00</span>
+                        <button aria-label="Adicionar Perfume La Vie Est Belle ao carrinho">Adicionar ao Carrinho</button>
+                    </div>
+                </article>
+
+                <article class="card-promocao" data-categoria="cuidados" data-nome="creme anti-idade l'oréal" data-preco="120.00" role="listitem" tabindex="0">
+                    <a href="#">
+                        <img src="./libs/img/Creme anti idade.jpg" alt="Creme Anti-Idade L'Oréal" />
+                    </a>
+                    <div class="card-content">
+                        <a href="#">
+                            <h3>Creme Anti-Idade L'Oréal</h3>
+                        </a>
+                        <p>Creme para rejuvenescimento da pele.</p>
+                        <span>R$ 120,00</span>
+                        <button aria-label="Saiba mais sobre Creme Anti-Idade L'Oréal">Veja sobre o Produto</button>
+                    </div>
+                </article>
+
+                <article class="card-promocao" data-categoria="maquiagem" data-nome="batom matte maybelline" data-preco="30.00" role="listitem" tabindex="0">
+                    <a href="#">
+                        <img src="./libs/img/Battom.jpg" alt="Batom Matte Maybelline" />
+                    </a>
+                    <div class="card-content">
+                        <a href="#">
+                            <h3>Batom Matte Maybelline</h3>
+                        </a>
+                        <span class="preco-promocao">R$ 45,00</span>
+                        <strong>por apenas</strong>
+                        <span class="preco">R$ 30,00</span>
+                        <button aria-label="Adicionar Batom Matte Maybelline ao carrinho">Adicionar ao Carrinho</button>
+                    </div>
+                </article>
+
+                <article class="card-promocao" data-categoria="perfumes" data-nome="perfume versace eros" data-preco="450.00" role="listitem" tabindex="0">
+                    <a href="#">
+                        <img src="./libs/img/Eros Versace.jpg" alt="Perfume Versace Eros" />
+                    </a>
+                    <div class="card-content">
+                        <a href="#">
+                            <h3>Perfume Versace Eros</h3>
+                        </a>
+                        <span class="preco-promocao">R$ 600,00</span>
+                        <strong>por apenas</strong>
+                        <span class="preco">R$ 450,00</span>
+                        <button aria-label="Adicionar Perfume Versace Eros ao carrinho">Adicionar ao Carrinho</button>
+                    </div>
+                </article>
+            </div>
+        </main>
+
+        <script>
+            function filtrarPromoções() {
+                var ordenarSelect = document.getElementById("ordenarFiltro");
+                var ordenar = ordenarSelect ? ordenarSelect.value : "";
+                var searchInput = document.getElementById("searchInput").value.toLowerCase();
+                var cardsContainer = document.getElementById('cardsContainer');
+                var cards = Array.from(cardsContainer.querySelectorAll('.card-promocao'));
+    
+                let filtered = cards.filter(card => {
+                    var cardNome = card.getAttribute("data-nome");
+                    var matchNome = cardNome.includes(searchInput);
+                    return matchNome;
+                });
+    
+                if (ordenar) {
+                    filtered.sort((a, b) => {
+                        if (ordenar === 'preco-asc') {
+                            return parseFloat(a.getAttribute('data-preco')) - parseFloat(b.getAttribute('data-preco'));
+                        } else if (ordenar === 'preco-desc') {
+                            return parseFloat(b.getAttribute('data-preco')) - parseFloat(a.getAttribute('data-preco'));
+                        } else if (ordenar === 'nome-asc') {
+                            return a.getAttribute('data-nome').localeCompare(b.getAttribute('data-nome'));
+                        } else if (ordenar === 'nome-desc') {
+                            return b.getAttribute('data-nome').localeCompare(a.getAttribute('data-nome'));
+                        }
+                        return 0;
+                    });
+                }
+    
+                cardsContainer.innerHTML = '';
+                if (filtered.length === 0) {
+                    const noResults = document.createElement('p');
+                    noResults.textContent = "Nenhum produto encontrado.";
+                    noResults.style.textAlign = 'center';
+                    noResults.style.color = '#e74c3c';
+                    noResults.style.fontWeight = '700';
+                    noResults.style.fontSize = '1.2rem';
+                    cardsContainer.appendChild(noResults);
+                    return;
+                }
+                filtered.forEach(card => {
+                    cardsContainer.appendChild(card);
+                    card.style.display = '';
+                });
+            }
+    
+            function limparFiltro() {
+                const ordenarFiltro = document.getElementById('ordenarFiltro');
+                const searchInput = document.getElementById('searchInput');
+                ordenarFiltro.value = "";
+                searchInput.value = "";
+                filtrarPromoções();
+                searchInput.focus();
+            }
+        </script>
+    </body>
+    </html>
+    
+    

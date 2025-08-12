@@ -1,0 +1,499 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    margin: 0;
+    height: 100vh;
+    
+}
+
+/* Barra lateral */
+nav {
+    width: 250px;
+    background-color: rgb(80, 17, 47);
+    color: #fff;
+    height: 100vh;
+    padding-top: 30px;
+    position: fixed;
+}
+/* Logo */
+.logo {
+    padding: 10px;
+    width: 200px;
+    display: flex;
+   
+}
+
+.logo-img {
+    margin-left: 30px;
+    border-radius: 100%;
+    width: 120px;
+    height: 80px;
+    font-size: 25px;
+}
+
+nav h1 {
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    margin-left: -20%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 30px;
+}
+
+nav ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+nav ul li {
+    margin: 15px 0;
+}
+
+nav ul li a {
+    color: white;
+    font-weight: 500;
+    padding: 12px;
+    display: block;
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: background-color 0.3s ease-out;
+}
+
+nav ul li a:hover {
+    background-color: #58167d;
+}
+
+nav ul li a svg {
+    width: 20px;
+    margin-right: 10px;
+}
+
+
+.main-content {
+    margin-left: 270px;
+    padding: 30px;
+    flex: 1;
+    overflow: auto;
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    color: rgb(80, 17, 47)
+}
+
+.card p {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Gráficos e outras seções */
+.chart-section {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.chart-section h3 {
+    margin-bottom: 20px;
+    color: rgb(80, 17, 47)
+}
+
+.corpoproduto {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background:  linear-gradient(72deg, #56394f 10%, rgb(94, 34, 63) 90%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.dashboard-cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card.animate {
+    transform: translateY(-100px);
+    opacity: 0;
+}
+
+.card svg {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+    fill: #333;
+}
+input{
+    z-index: 1;
+}
+
+.form-container {
+    display: none; /*  oculto */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+.form-container.show {
+    display: block;
+}
+
+form input {
+    padding: 20px;
+    margin: 5px 0;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    width: calc(100% - 22px);
+}
+
+form button {
+    padding: 10px;
+    width: 185px;
+    background-color: #da5c09;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 5px auto;
+    cursor: pointer;
+    display: block;
+}
+
+form button:hover {
+    background-color: #8a0909;
+    border-left: solid 8px rgba(255, 255, 255, 0.5);
+    border-right: solid 8px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 100px rgba(250, 36, 83, 0.8);
+    transition: 0.5s;
+}
+
+.voltar{
+    text-decoration: none;
+    color:white;
+}
+
+/* Estilo para a tabela de vendas */
+.vendas-section {
+    margin-top: 40px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.vendas-section h3 {
+    color: rgb(80, 17, 47);
+    margin-bottom: 20px;
+}
+
+#tabela-vendas {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#tabela-vendas th, #tabela-vendas td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+#tabela-vendas th {
+    background-color: rgb(80, 17, 47)
+    color: white;
+}
+
+#tabela-vendas tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: rgb(80, 17, 47);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #58167d;
+}
+
+
+.card-pedidos {
+    background-color: #fff;
+    width: 320px;
+    padding: 25px;
+    margin-left: 26%;
+    border-radius: 12px;
+    border: solid 1px black;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-pedidos:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-pedidos img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.card-pedidos h2 {
+    color: #701694;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+.card-pedidos p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.card-pedidos button {
+    background-color: #701694;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%;
+}
+
+.card-pedidos button:hover {
+    background-color: #58167d;
+    transform: translateY(-3px);
+}
+
+.card-pedidos button:active {
+    transform: translateY(1px);
+}
+
+.card-pedidos button:focus {
+    outline: none;
+}
+
+.card-pedidos .button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-pedidos .button-container button {
+    width: 100%;
+    margin: 5px 0;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h3 {
+    text-align: center;
+}
+
+.modal-content label {
+    display: block;
+    margin-top: 10px;
+}
+
+.modal-content input, .modal-content textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+.modal-content button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-content button[type="button"] {
+    background-color: #f44336;
+}
+
+.modal-content button:hover {
+    background-color: #45a049;
+}
+
+.modal-content button[type="button"]:hover {
+    background-color: #e53935;
+}
+
+.form-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+    display: none;
+}
+
+.form-container.show {
+    display: block;
+}
+
+.form {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form h3 {
+    margin-top: 0;
+    color: #d4098a;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form input, .form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.form button {
+    background-color: #d4098a;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.form button:hover {
+    background-color: #b00772;
+}
+
+#product-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+#product-list .product-item {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#product-list img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#search-product-edit, #search-product-delete {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Novos estilos para upload de imagem */
+.form input[type="file"] {
+    padding: 8px;
+}
+
+.image-preview {
+    max-width: 200px;
+    max-height: 200px;
+    margin: 10px 0;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .dashboard-cards {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+    
+    .form-container {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+    }
+}

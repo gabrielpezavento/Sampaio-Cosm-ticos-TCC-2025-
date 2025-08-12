@@ -1,0 +1,189 @@
+/*pagina principal do perfl*/
+* {
+    font-family: 'Arial', sans-serif;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;}
+
+header .voltar {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.dashboard-cards {
+    margin-top: 15%;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card.animate {
+    transform: translateY(-100px);
+    opacity: 0;
+}
+
+.card svg {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+    fill: #333;
+}
+
+.frete {
+    color:white;
+    background-color: #000000;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+}
+
+button{
+    padding: 10px;
+    width: 135px;
+    background-color: #8a0909;
+    color: white;
+    border: none;
+    margin: 5px auto;
+    border-radius: 5px;
+    align-items: center;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+/* editar perfil*/
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.form-group .error {
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.form-group input[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.form-group input[type="submit"]:focus {
+    outline: none;
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form-footer a {
+    color: #007BFF;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+.corpoperfil{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background:  linear-gradient(72deg, #56394f 10%, rgb(94, 34, 63) 90%);
+    display: flex;
+}
+
+/*HISTORICO DE COMPRA*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+td {
+    color: #555;
+}
